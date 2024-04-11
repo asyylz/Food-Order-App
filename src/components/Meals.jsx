@@ -1,16 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export default function Meals() {
   const [loadedMeals, setLoadedMeals] = useState([]);
-  
-  async function fetchMeals() {
-    const response = await fetch("http://localhost:3000/meals");
 
-    if (!response.ok) {
-      //..
+  // we could also put fetchMeals function outside of the hook but then we would have to wrap our funtion with usecallback
+  useEffect(() => {
+    async function fetchMeals() {
+      const response = await fetch("http://localhost:3000/meals");
+
+      if (!response.ok) {
+        //..
+      }
+
+      const meals = await response.json();
+      setLoadedMeals(meals);
     }
+    fetchMeals();
+  }, []);
 
-    const meals = await response.json();
-  }
-
-  return <ul id="meals"></ul>;
+  return (
+    <ul id="meals">
+      {loadedMeals.map((meal) => (
+        <li key={meal.id}>{meal.name}</li>
+      ))}
+    </ul>
+  );
 }
