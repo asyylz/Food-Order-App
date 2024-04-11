@@ -2,6 +2,7 @@ import { useContext } from "react";
 import Modal from "../UI/Modal";
 import CartContext from "../store/CartContext";
 import { currencyFormatter } from "../utils/formatting";
+import Button from "../UI/Button";
 
 export default function Cart() {
   const cartCtx = useContext(CartContext);
@@ -21,6 +22,10 @@ export default function Cart() {
         ))}
       </ul>
       <p className="total">{currencyFormatter.format(totalPrice)}</p>
+      <p className="modal-actions">
+        <Button textOnly>Close</Button>
+        <Button> Go to Checkout</Button>
+      </p>
     </Modal>
   );
 }
