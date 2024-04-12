@@ -23,6 +23,10 @@
         </ol>
     </section>
     <section>
+        <h1>Outcome:</h1>
+        <p>Outcome website <a href="https://sitefoodorder.netlify.app/">here</a></p>
+    </section>
+    <section>
         <h1>Features:</h1>
         <u><b>Interactive UI Components:</b></u>The app features reusable UI components such as input fields, buttons,
         and modal windows, enhancing user experience and making interactions intuitive.
@@ -43,4 +47,11 @@
         This project was created as part of an educational course on Udemy and is intended for learning purposes only.
         All credit for the project idea and implementation goes to the course instructors and authors.
     </section>
+    <footer>
+        <h2>Contributing</h2>
+        <p>Contributions to the project are welcome! If you find any issues or have suggestions for improvements, please
+            feel free to open an issue or submit a pull request.</p>
+        <h2>License</h2>
+        <p>This project is licensed under the MIT License.</p>
+    </footer>
 </body>
