@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import Button from "../UI/Button.jsx";
+import Button from "../store/UI/Button.jsx";
 import logoImg from "../assets/logo.jpg";
 import CartContext from "../store/CartContext.jsx";
 import UserProgressContext from "../store/UserProgressContext.jsx";
@@ -13,7 +13,7 @@ export default function Header() {
   }, 0);
 
   function handleShowCart() {
-    console.log("clicked")
+    console.log("clicked");
     userProgressCtx.showCart();
   }
 
