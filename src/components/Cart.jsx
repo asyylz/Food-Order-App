@@ -9,8 +9,13 @@ import CartItem from "./CartItem.jsx";
 export default function Cart() {
   const cartCtx = useContext(CartContext);
   const userProgressCtx = useContext(UserProgressContext);
+
   function handleCloseCart() {
     userProgressCtx.hideCart();
+  }
+
+  function handleGoToCheckout() {
+    userProgressCtx.showCheckout();
   }
 
   const totalPrice = cartCtx.items.reduce(
@@ -18,7 +23,11 @@ export default function Cart() {
     0
   );
   return (
-    <Modal className="cart" open={userProgressCtx.progress === "cart"}>
+    <Modal
+      className="cart"
+      open={userProgressCtx.progress === "cart"}
+      onClose={userProgressCtx.progress === "cart" ? handleCloseCart : null}
+    >
       <h2>Your Cart</h2>
       <ul>
         {cartCtx.items.map((item) => (
@@ -38,7 +47,7 @@ export default function Cart() {
           Close
         </Button>
         {cartCtx.items.length > 0 && (
-          <Button onClick={handleCloseCart}> Go to Checkout</Button>
+          <Button onClick={handleGoToCheckout}> Go to Checkout</Button>
         )}
       </p>
     </Modal>
