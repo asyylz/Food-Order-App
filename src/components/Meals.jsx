@@ -2,7 +2,7 @@ import useHttp from "../hooks/useHttp.jsx";
 import MealItem from "./MealItem.jsx";
 import Error from "./Error.jsx";
 
-const requestConfig = {};
+const requestConfig = {}; // to prevent infinite loop
 export default function Meals() {
   const {
     data: loadedMeals,
