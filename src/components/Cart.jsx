@@ -8,6 +8,9 @@ import UserProgressContext from "../store/UserProgressContext.jsx";
 export default function Cart() {
   const cartCtx = useContext(CartContext);
   const userProgressCtx = useContext(UserProgressContext);
+  function handleCloseCart() {
+    userProgressCtx.hideCart();
+    }
 
   const totalPrice = cartCtx.items.reduce(
     (totalPrice, item) => totalPrice + item.quantity * item.price,
@@ -25,7 +28,7 @@ export default function Cart() {
       </ul>
       <p className="total">{currencyFormatter.format(totalPrice)}</p>
       <p className="modal-actions">
-        <Button textOnly>Close</Button>
+        <Button textOnly onClick={handleCloseCart}>Close</Button>
         <Button> Go to Checkout</Button>
       </p>
     </Modal>

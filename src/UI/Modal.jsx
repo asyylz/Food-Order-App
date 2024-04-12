@@ -5,7 +5,7 @@ export default function Modal({ children, open, className = '' }) {
   const dialog = useRef();
 
   useEffect(() => {
-    const modal = dialog.current;
+    const modal = dialog.current; //in between these function executions,it is recommended to lock in the value this ref has when this effect function runs. Technically  not required but recommended pattern.
     
     if (open) {
       modal.showModal();
