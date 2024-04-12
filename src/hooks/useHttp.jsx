@@ -20,18 +20,25 @@ export default function useHttp(url, config) {
   const [error, setError] = useState();
 
   // this function dealing with updating the states
-  const sendRequest = useCallback(async function sendRequest() {
-    setIsLoading(true);
-    try {
-      const restData = sendHttpRequest(url, config);
-      setData(restData);
-    } catch (error) {
-      setError(error.message || "Something went wrong");
+  const sendRequest = useCallback(
+    async function sendRequest() {
+      setIsLoading(true);
+      try {
+        const restData = sendHttpRequest(url, config);
+        setData(restData);
+      } catch (error) {
+        setError(error.message || "Something went wrong");
+      }
+      setIsLoading(false);
+    },
+    [url, config]
+  );
+
+  useEffect(() => {
+    if (config && config.method === "GET") {
+      sendRequest();
     }
-    setIsLoading(false);
-  },[url, config]);
+  }, [sendRequest, config]);
 
-  useEffect(() => sendRequest(), [sendRequest]);
-
-  return { data, isLoading, error };
+  return { data, isLoading, error, sendRequest };
 }
