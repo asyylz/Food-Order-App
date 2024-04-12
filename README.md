@@ -39,6 +39,9 @@
         UserProgressContext) to manage global state and facilitate data flow between components. This approach offers a
         lightweight alternative to Redux, while still providing centralized state management capabilities.
         <br>
+        <u><b>JavaScript:</b></u> The primary programming language used for implementing application logic and
+        interactivity.
+        <br>
     </section>
     <section>
         <strong>
