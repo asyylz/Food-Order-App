@@ -24,7 +24,7 @@
     </section>
     <section>
         <h1>Outcome:</h1>
-        <p>Outcome website <a href="https://sitefoodorder.netlify.app/">here</a></p>
+        <p>Outcome website <a href="https://food-order-63236.web.app/">here</a></p>
     </section>
     <section>
         <h1>Features:</h1>
